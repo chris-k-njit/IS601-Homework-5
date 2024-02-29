@@ -16,3 +16,4 @@ def test_calculate_and_print(a_string, b_string, operation_string,expected_strin
     calculate_and_print(a_string, b_string, operation_string)
     captured = capsys.readouterr()
     assert captured.out.strip() == expected_string
+    
