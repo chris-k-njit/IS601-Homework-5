@@ -1,19 +1,49 @@
 import pytest
-from main import calculate_and_print  # Ensure this import matches your project structure
+from io import StringIO
+from app import main  # Adjust based on your project structure if needed.
 
-# Parameterize the test function to cover different operations and scenarios, including errors
-@pytest.mark.parametrize("a_string, b_string, operation_string, expected_string", [
-    ("5", "3", 'add', "The result of 5 add 3 is equal to 8"),
-    ("10", "2", 'subtract', "The result of 10 subtract 2 is equal to 8"),
-    ("4", "5", 'multiply', "The result of 4 multiply 5 is equal to 20"),
-    ("20", "4", 'divide', "The result of 20 divide 4 is equal to 5"),
-    ("1", "0", 'divide', "An error occurred: Cannot divide by zero"),  # Adjusted for the actual error message
-    ("9", "3", 'unknown', "Unknown operation: unknown"),  # Test for unknown operation
-    ("a", "3", 'add', "Invalid number input: a or 3 is not a valid number."),  # Testing invalid number input
-    ("5", "b", 'subtract', "Invalid number input: 5 or b is not a valid number.")  # Testing another invalid number input
-])
-def test_calculate_and_print(a_string, b_string, operation_string,expected_string, capsys):
-    calculate_and_print(a_string, b_string, operation_string)
-    captured = capsys.readouterr()
-    assert captured.out.strip() == expected_string
+def test_main_app_full_flow(monkeypatch, capsys):
+    # Simulating CLI inputs for various commands, including arithmetic operations and utilities
+    inputs = iter([
+        "greet",  # Should print a greeting message
+        "add", "1 2",  # Addition operation
+        "multiply", "3 4",  # Multiplication operation
+        "divide", "10 2",  # Division operation
+        "exponent", "2 3",  # Exponentiation operation
+        "sqrt", "4",  # Square root operation
+        "modulo", "10 3",  # Modulo operation
+        "caffeine",  # Should print a caffeine reminder
+        "help",  # Should display help menu
+        "bye",  # Should print a goodbye message
+        "exit"  # Exit the application
+    ])
+    
+    # Mock input function to return the next simulated CLI input
+    def mock_input(prompt):
+        return next(inputs, "exit")
+    
+    # Use monkeypatch to replace input() with mock_input()
+    monkeypatch.setattr("builtins.input", mock_input)
+    # Capture print statements
+    monkeypatch.setattr("sys.stdout", StringIO())
+    
+    # Run the main function
+    main()
+    
+    # Capture the application's output
+    captured = capsys.readouterr().out
+    
+    # Assertions to verify each command's output
+    assert "Hello! Welcome" in captured
+    assert "Result: 3" in captured  # Addition result
+    assert "Result: 12" in captured  # Multiplication result
+    assert "Result: 5.0" in captured  # Division result
+    assert "Result: 8" in captured  # Exponentiation result
+    assert "Result: 2.0" in captured  # Square root result
+    assert "Result: 1" in captured  # Modulo result
+    assert "caffeine" in captured  # Caffeine reminder
+    assert "Available commands:" in captured  # Help menu
+    assert "Goodbye" in captured  # Goodbye message
+
+# Note: You may need to adjust the assertions based on the exact output of your application.
     
