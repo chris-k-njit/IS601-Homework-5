@@ -9,7 +9,7 @@ from .commands.sqrt_command import Sqrt
 from .commands.modulo_command import Modulo
 from .commands.greet_command import Greet
 from .commands.help_command import Help
-from .commands.goodbye_command import Goodbye
+from .commands.bye_command import Goodbye
 from .commands.caffeine_command import Caffeine
 
 def get_command(command_name):
