@@ -1,5 +1,6 @@
 from calculator.command_factory import get_command
 from calculator.commands.command_interface import CommandInterface
+from calculator.commands.add_command import Add
 from calculator.commands.divide_command import Divide
 from calculator.commands.multiply_command import Multiply
 from calculator.commands.sqrt_command import Sqrt
