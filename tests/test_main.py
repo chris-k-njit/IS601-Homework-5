@@ -1,6 +1,6 @@
 import pytest
 from io import StringIO
-from app import main  # Adjust based on your project structure if needed.
+from calculator import main  # Adjust based on your project structure if needed.
 
 def test_main_app_full_flow(monkeypatch, capsys):
     # Simulating CLI inputs for various commands, including arithmetic operations and utilities
