@@ -1,6 +1,6 @@
 import pytest
 from io import StringIO
-from calculator import main  
+import main  
 
 def test_main_app_full_flow(monkeypatch, capsys):
     # Simulating CLI inputs for various commands, including arithmetic operations and utilities
