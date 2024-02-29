@@ -15,7 +15,6 @@ def test_main_app_full_flow(monkeypatch, capsys):
         "divide", "10 2",  # Division operation
         "exponent", "2 3",  # Exponentiation operation
         "sqrt", "4",  # Square root operation
-        "modulo", "10 3",  # Modulo operation
         "caffeine",  # Should print a caffeine reminder
         "help",  # Should display a help menu
         "bye",  # Should print a goodbye message
@@ -44,7 +43,6 @@ def test_main_app_full_flow(monkeypatch, capsys):
     assert "Result: 5.0" in captured  # Division result
     assert "Result: 8" in captured  # Exponentiation result
     assert "Result: 2.0" in captured  # Square root result
-    assert "Result: 1" in captured  # Modulo result
     assert "caffeine" in captured  # Caffeine reminder
     assert "Available commands:" in captured  # Help menu
     assert "Goodbye" in captured  # Goodbye message

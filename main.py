@@ -5,7 +5,6 @@ from calculator.commands.divide_command import Divide
 from calculator.commands.multiply_command import Multiply
 from calculator.commands.sqrt_command import Sqrt
 from calculator.commands.subtract_command import Subtract
-from calculator.commands.modulo_command import Modulo
 from calculator.commands.exponent_command import Exponent
 from calculator.commands.greet_command import Greet
 from calculator.commands.help_command import Help
@@ -22,7 +21,6 @@ def main():
         "divide": Divide(),
         "exponent": Exponent(),
         "sqrt": Sqrt(),
-        "modulo": Modulo(),
         "greet": Greet(),
         "help": Help(),
         "goodbye": Goodbye(),
@@ -35,7 +33,7 @@ def main():
             print("Exiting calculator program...")
             break
         
-        if command_input in ["add", "subtract", "multiply", "divide", "exponent", "sqrt", "modulo"]:
+        if command_input in ["add", "subtract", "multiply", "divide", "exponent", "sqrt"]:
             numbers_input = input("Enter numbers separated by a space in between them: ").strip()
             numbers = list(map(float, numbers_input.split()))
             command = get_command(command_input)  # Using a factory or direct instantiation

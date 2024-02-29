@@ -6,7 +6,6 @@ from .commands.multiply_command import Multiply
 from .commands.divide_command import Divide
 from .commands.exponent_command import Exponent
 from .commands.sqrt_command import Sqrt
-from .commands.modulo_command import Modulo
 from .commands.greet_command import Greet
 from .commands.help_command import Help
 from .commands.bye_command import Goodbye
@@ -20,7 +19,6 @@ def get_command(command_name):
         "divide": Divide(),
         "exponent": Exponent(),
         "sqrt": Sqrt(),
-        "modulo": Modulo(),
         "greet": Greet(),
         "help": Help(),
         "goodbye": Goodbye(),
