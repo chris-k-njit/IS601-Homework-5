@@ -1,5 +1,3 @@
-from ast import Add
-from tokenize import Exponent
 from calculator.command_factory import get_command
 from calculator.commands.command_interface import CommandInterface
 from calculator.commands.divide_command import Divide
