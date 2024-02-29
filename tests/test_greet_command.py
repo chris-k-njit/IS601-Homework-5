@@ -4,4 +4,4 @@ def test_greet(capsys):
     greet_command = Greet()
     greet_command.execute()
     captured = capsys.readouterr()
-    assert "Hi there, welcome to Chris' interactive Python calculator." in captured.out
+    assert "Hi there, welcome to Chris Keddell's interactive Python calculator." in captured.out
