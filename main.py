@@ -1,7 +1,7 @@
 from calculator.command_factory import get_command
 
 def main():
-    print("Welcome to the interactive calculator. Type 'help' for available commands.")
+    print("Welcome to Chris' interactive Python calculator. Type 'help' for available calculator commands.")
 
     while True:
         command_input = input("> ").strip().lower()
@@ -11,7 +11,7 @@ def main():
         if command:
             command.execute()
         else:
-            print("Unknown command. Type 'help' to see available commands.")
+            print("Unknown command here. Type 'help' to see all available calculator commands.")
 
 if __name__ == "__main__":
     main()
