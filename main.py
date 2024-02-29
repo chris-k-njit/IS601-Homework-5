@@ -37,7 +37,7 @@ def main():
             break
         
         if command_input in ["add", "subtract", "multiply", "divide", "exponent", "sqrt", "modulo"]:
-            numbers_input = input("Enter numbers separated by space: ").strip()
+            numbers_input = input("Enter numbers separated by a space in between them: ").strip()
             numbers = list(map(float, numbers_input.split()))
             command = get_command(command_input)  # Using a factory or direct instantiation
             if command and isinstance(command, CommandInterface):
