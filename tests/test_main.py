@@ -1,12 +1,11 @@
-import pytest
 from io import StringIO
+
+import pytest
 from main import main  
 
 def test_main_app_full_flow(monkeypatch, capsys):
     # Simulating CLI inputs for various commands, including arithmetic operations and utilities
     main()
-
-    user_input = StringIO
 
     inputs = iter([
         "greet",  # Should print a greeting message
