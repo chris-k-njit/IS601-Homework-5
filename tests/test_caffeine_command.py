@@ -1,4 +1,4 @@
-from app.commands.caffeine import Caffeine
+from calculator.commands.caffeine_command import Caffeine
 
 def test_caffeine(capsys):
     command = Caffeine()
