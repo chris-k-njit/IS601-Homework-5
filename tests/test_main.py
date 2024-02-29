@@ -6,6 +6,8 @@ def test_main_app_full_flow(monkeypatch, capsys):
     # Simulating CLI inputs for various commands, including arithmetic operations and utilities
     main()
 
+    user_input = StringIO
+
     inputs = iter([
         "greet",  # Should print a greeting message
         "add", "1 2",  # Addition operation
