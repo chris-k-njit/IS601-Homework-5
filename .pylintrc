@@ -18,6 +18,7 @@ disable= unused-argument,
          unnecessary-dunder-call,
          comparison-with-callable,
          unused-import,
+         implicit-str-concat,
          OSError
 
 [REPORTS]

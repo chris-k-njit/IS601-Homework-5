@@ -10,16 +10,16 @@ def test_main_app_flow(monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFi
 #     main()
 
     user_inputs = [
-        "greet",  # Should print a greeting message
-        "add", "1 2",  # Addition operation
-        "multiply", "3 4",  # Multiplication operation
-        "divide", "10 2",  # Division operation
-        "exponent", "2 3",  # Exponentiation operation
-        "sqrt", "4",  # Square root operation
-        "caffeine",  # Should print a caffeine reminder
-        "help",  # Should display a help menu
-        "bye",  # Should print a goodbye message
-        "exit"  # Exit the application
+        "greet\n",  # Should print a greeting message
+        "add\n", "1\n", "2\n",  # Addition operation
+        "multiply\n", "3\n" "4\n",  # Multiplication operation
+        "divide\n", "10\n" "2\n",  # Division operation
+        "exponent\n", "2\n" "3\n",  # Exponentiation operation
+        "sqrt\n", "4\n",  # Square root operation
+        "caffeine\n",  # Should print a caffeine reminder
+        "help\n",  # Should display a help menu
+        "bye\n",  # Should print a goodbye message
+        "exit\n"  # Exit the application
     ]
     
     # Mock input function to return the next simulated CLI input
@@ -34,7 +34,7 @@ def test_main_app_flow(monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFi
         main()  # Adjust depending on how you import or structure your main function.
         mock_print.assert_called()
     # Capture the application's output
-    captured = capsys.readouterr().out
+    captured = capsys.readouterr()
     
     # Assertions to verify each command's output
     assert "Hi there, welcome to Chris Keddell's interactive Python calculator." in captured.out
