@@ -1,16 +1,16 @@
 # factory to contain all commands needed for this part of the homework.
 from .commands.command_interface import CommandInterface
-from .commands.add import Add
-from .commands.subtract import Subtract
-from .commands.multiply import Multiply
-from .commands.divide import Divide
-from .commands.exponent import Exponent
-from .commands.sqrt import Sqrt
-from .commands.modulo import Modulo
-from .commands.greet import Greet
-from .commands.help import Help
-from .commands.goodbye import Goodbye
-from .commands.caffeine import Caffeine
+from .commands.add_command import Add
+from .commands.subtract_command import Subtract
+from .commands.multiply_command import Multiply
+from .commands.divide_command import Divide
+from .commands.exponent_command import Exponent
+from .commands.sqrt_command import Sqrt
+from .commands.modulo_command import Modulo
+from .commands.greet_command import Greet
+from .commands.help_command import Help
+from .commands.goodbye_command import Goodbye
+from .commands.caffeine_command import Caffeine
 
 def get_command(command_name):
     commands = {
