@@ -17,7 +17,7 @@ def test_main_app_full_flow(monkeypatch, capsys):
         "sqrt", "4",  # Square root operation
         "modulo", "10 3",  # Modulo operation
         "caffeine",  # Should print a caffeine reminder
-        "help",  # Should display help menu
+        "help",  # Should display a help menu
         "bye",  # Should print a goodbye message
         "exit"  # Exit the application
     ])
