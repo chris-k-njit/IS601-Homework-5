@@ -33,17 +33,20 @@ def main():
             print("Exiting calculator program...")
             break
         
-        if command_input in ["add", "subtract", "multiply", "divide", "exponent", "sqrt"]:
-            numbers_input = input("Enter numbers separated by a space in between them: ").strip()
-            numbers = list(map(float, numbers_input.split()))
-            command = get_command(command_input)  # Using a factory or direct instantiation
-            if command and isinstance(command, CommandInterface):
-                result = command.execute(*numbers)
+        if command_input in commands:
+            if command_input in ["add", "subtract", "multiply", "divide", "exponent", "sqrt", "greet", "caffeine", "bye", "help"]:
+            # Only request additional numbers for arithmetic commands
+                numbers_input = input("Enter numbers separated by a space in between them: ").strip()
+                try:
+                    numbers = list(map(float, numbers_input.split()))
+                except ValueError:
+                    print("Invalid numbers. Please try again.")
+                    continue  # Skip the rest of the loop and ask for new command
+                result = commands[command_input].execute(*numbers)
                 print("Result:", result)
             else:
-                print("Unknown command.")
-        elif command_input in commands:
-            commands[command_input].execute()
+                # Directly execute commands that do not require additional numbers
+                commands[command_input].execute()
         else:
             print("Unknown command. Type 'help' for a list of commands.")
 
