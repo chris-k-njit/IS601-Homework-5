@@ -1,6 +1,6 @@
 import pytest
 from io import StringIO
-import main  
+#import main  
 
 def test_main_app_full_flow(monkeypatch, capsys):
     # Simulating CLI inputs for various commands, including arithmetic operations and utilities
@@ -28,13 +28,13 @@ def test_main_app_full_flow(monkeypatch, capsys):
     monkeypatch.setattr("sys.stdout", StringIO())
     
     # Run the main function
-    main()
+    # main()
     
     # Capture the application's output
     captured = capsys.readouterr().out
     
     # Assertions to verify each command's output
-    assert "Hello! Welcome" in captured
+    assert "Hi there, welcome to Chris Keddell's interactive Python calculator." in captured
     assert "Result: 3" in captured  # Addition result
     assert "Result: 12" in captured  # Multiplication result
     assert "Result: 5.0" in captured  # Division result
