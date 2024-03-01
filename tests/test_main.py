@@ -35,14 +35,14 @@ def test_main_app_flow(monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFi
     print("Captured stderr:", captured.err)
 
     # Assertions to verify each command's output
-    # assert "Hi there, welcome to Chris Keddell's interactive Python calculator." in captured.out
-    assert "Result: 3" in captured.out  # Addition result
-    assert "Result: 12" in captured.out  # Multiplication result
+    assert "Hi there, welcome to Chris Keddell's interactive Python calculator." in captured.out # Greet
+    assert "Result: 3.0" in captured.out  # Addition result
+    assert "Result: 12.0" in captured.out  # Multiplication result
     assert "Result: 5.0" in captured.out # Division result
     assert "Result: 2.0" in captured.out # Square root result
-    assert "caffeine" in  captured.out # Caffeine reminder
-    assert "Available commands:" in captured.out  # Help menu
-    assert "bye" in captured.out # Goodbye message
+    assert "You're a programmer, you need some caffeine to fuel your code." in  captured.out # Caffeine reminder
+    assert "The available commands for this calculator are: add, subtract, multiply, divide, sqrt, greet, help, bye, caffeine, exit" in captured.out  # Help menu
+    assert "Adios! Thanks for trying out my calculator project." in captured.out # Goodbye message
 
-# Note: You may need to adjust the assertions based on the exact output of your application.
+    # Note: You may need to adjust the assertions based on the exact output of your application.
     
