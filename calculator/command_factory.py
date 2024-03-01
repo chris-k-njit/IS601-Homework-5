@@ -4,7 +4,6 @@ from .commands.add_command import Add
 from .commands.subtract_command import Subtract
 from .commands.multiply_command import Multiply
 from .commands.divide_command import Divide
-from .commands.exponent_command import Exponent
 from .commands.sqrt_command import Sqrt
 from .commands.greet_command import Greet
 from .commands.help_command import Help
@@ -17,11 +16,10 @@ def get_command(command_name):
         "subtract": Subtract(),
         "multiply": Multiply(),
         "divide": Divide(),
-        "exponent": Exponent(),
         "sqrt": Sqrt(),
         "greet": Greet(),
         "help": Help(),
-        "goodbye": Goodbye(),
+        "bye": Goodbye(),
         "caffeine": Caffeine(),
     }
     return commands.get(command_name, None)

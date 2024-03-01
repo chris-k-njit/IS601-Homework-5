@@ -6,7 +6,13 @@ def test_divide():
     assert divide_command.execute(10, 5) == 2
     assert divide_command.execute(50, 2) == 25
 
-def test_divide_by_zero():
+def test_divide_command_with_insufficient_args():
     divide_command = Divide()
-    with pytest.raises(Exception):
-        divide_command.execute(1, 0)
+    with pytest.raises(ValueError):
+        divide_command.execute(10)
+
+def test_divide_command_with_zero_divisor():
+    divide_command = Divide()
+    with pytest.raises(ZeroDivisionError):
+        divide_command.execute(10, 0)
+        

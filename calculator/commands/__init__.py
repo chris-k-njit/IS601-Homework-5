@@ -2,7 +2,6 @@ from .add_command import Add
 from .subtract_command import Subtract
 from .multiply_command import Multiply
 from .divide_command import Divide
-from .exponent_command import Exponent
 from .sqrt_command import Sqrt
 from .greet_command import Greet
 from .help_command import Help
@@ -11,5 +10,5 @@ from .caffeine_command import Caffeine
 
 __all__ = [
     "Add", "Subtract", "Multiply", "Divide", 
-    "Exponent", "Sqrt", "Greet", "Help", "Goodbye", "Caffeine"
+    "Sqrt", "Greet", "Help", "Goodbye", "Caffeine"
 ]
