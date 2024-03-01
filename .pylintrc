@@ -9,18 +9,11 @@ ignore=/usr/lib/python3/dist-packages/six.py
 # Only show these errors
 # Disable the following checks (example list):
 disable= unused-argument,
-         unused-variable,
          line-too-long,
          redefined-outer-name,
-         trailing-whitespace,
          missing-module-docstring,
-         missing-function-docstring,
-         invalid-name,
-         unnecessary-dunder-call,
-         comparison-with-callable,
-         unused-import,
-         implicit-str-concat,
-         OSError
+         missing-function-docstring
+
 
 [REPORTS]
 # Set the output format. Available formats: text, parseable, colorized, json, msvs (visual studio) and html
