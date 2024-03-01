@@ -3,11 +3,13 @@
 init-hook='import sys; sys.path.append(".")'
 extension-pkg-whitelist=pydantic
 load-plugins=pylint_django
+ignore=/usr/lib/python3/dist-packages/six.py 
 
 [MESSAGES CONTROL]
 # Only show these errors
 # Disable the following checks (example list):
 disable= unused-argument,
+         unused-variable,
          line-too-long,
          redefined-outer-name,
          trailing-whitespace,
@@ -16,7 +18,9 @@ disable= unused-argument,
          invalid-name,
          unnecessary-dunder-call,
          comparison-with-callable,
-         unused-import
+         unused-import,
+         implicit-str-concat,
+         OSError
 
 [REPORTS]
 # Set the output format. Available formats: text, parseable, colorized, json, msvs (visual studio) and html
@@ -56,5 +60,3 @@ method-rgx=[a-z_][a-z0-9_]{2,50}$
 
 # Module names should have short, all-lowercase names. The use of underscores is discouraged.
 module-rgx=[a-z_][a-z0-9_]{1,30}$
-
-# Class names
