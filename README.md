@@ -14,7 +14,7 @@
   * Once calculator commands are integrated, update and expand tests to achieve a full 100% coverage, to ensure this calculator's functionality is fully verified.
   * Almost hit 100% when looking at TOTAL under all tests after running pytest --pylint --cov
 
-4. Plugin Architecture - [ ]
+4. Plugin Architecture - [x]
   * Now, refactor my program to automatically load plugins, making it easier to provide command additions without manual updates.
 
 5. (BONUS) Explore Multiprocessing Capabilities - [ ]
