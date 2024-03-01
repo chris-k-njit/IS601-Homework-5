@@ -19,8 +19,7 @@ disable= unused-argument,
          unnecessary-dunder-call,
          comparison-with-callable,
          unused-import,
-         implicit-str-concat,
-         OSError
+         implicit-str-concat
 
 [REPORTS]
 # Set the output format. Available formats: text, parseable, colorized, json, msvs (visual studio) and html
